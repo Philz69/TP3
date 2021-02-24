@@ -14,20 +14,20 @@ def ecart_type(notes, totalNotes):
     return ecartType
 
 while True:
-    totalNotes = input("Enter the total amount of notes")
+    totalNotes = input("Entrez le nombre total de notes\n")
     if totalNotes.isnumeric():
         totalNotes = int(totalNotes)
         break
 
 notes = []
 while len(notes) < totalNotes:
-    inputString = input("Entrez une note:")
+    inputString = input("Entrez une note:\n")
     try:
         note = float(inputString)
         notes.append(note) 
     except ValueError:
         pass
 
-print(notes)
-print(note_moyenne(notes,totalNotes))
-print(ecart_type(notes,totalNotes))
+print("Liste des notes: ", notes)
+print("Moyenne des notes: ", note_moyenne(notes,totalNotes))
+print("Ecart-type des notes: ", ecart_type(notes,totalNotes))
