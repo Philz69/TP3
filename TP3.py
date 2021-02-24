@@ -6,10 +6,12 @@ def note_moyenne(notes, totalNotes):
 
 def ecart_type(notes, totalNotes):
     moyenne = note_moyenne(notes, totalNotes)
-    ecartType = 0;
+    ecartType = 0.0;
     for note in notes:
-        ecartType = ((note - moyenne)^2)/2
-    ecartType = ecartType^(1/2)
+        ecartType = ecartType + ((note - moyenne)**2)
+    ecartType = ecartType/totalNotes
+    ecartType = ecartType**(1/2)
+    return ecartType
 
 while True:
     totalNotes = input("Enter the total amount of notes")
@@ -28,3 +30,4 @@ while len(notes) < totalNotes:
 
 print(notes)
 print(note_moyenne(notes,totalNotes))
+print(ecart_type(notes,totalNotes))
